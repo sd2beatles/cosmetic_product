@@ -27522,3 +27522,71 @@ File Path                            PID  Runtime      # DAGs    # Errors  Last 
 /opt/airflow/dags/bigquery_dag.py    249  0.01s             1           0  4.58s           2023-01-08T08:41:24
 /opt/airflow/dags/main.py                                   1           0  4.34s           2023-01-08T08:41:34
 ================================================================================
+[2023-01-08T08:42:25.696+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py                           1           0  4.68s           2023-01-08T08:42:00
+/opt/airflow/dags/main.py                                   1           0  4.98s           2023-01-08T08:42:09
+================================================================================
+[2023-01-08T08:42:56.266+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py                           1           0  3.78s           2023-01-08T08:42:34
+/opt/airflow/dags/main.py                                   1           0  4.16s           2023-01-08T08:42:44
+================================================================================
+[2023-01-08T08:43:26.397+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py                           1           0  4.00s           2023-01-08T08:43:18
+/opt/airflow/dags/main.py                                   1           0  4.56s           2023-01-08T08:43:19
+================================================================================
+[2023-01-08T08:43:56.521+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py                           1           0  4.91s           2023-01-08T08:43:53
+/opt/airflow/dags/main.py                                   1           0  4.97s           2023-01-08T08:43:54
+================================================================================
+[2023-01-08T08:44:27.090+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py    267  3.07s             1           0  4.91s           2023-01-08T08:43:53
+/opt/airflow/dags/main.py            269  2.04s             1           0  4.97s           2023-01-08T08:43:54
+================================================================================
+[2023-01-08T08:44:57.302+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py                           1           0  3.76s           2023-01-08T08:44:27
+/opt/airflow/dags/main.py                                   1           0  3.98s           2023-01-08T08:44:29
+================================================================================
+[2023-01-08T08:45:27.521+0000] {manager.py:846} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/bigquery_dag.py                           1           0  4.62s           2023-01-08T08:45:02
+/opt/airflow/dags/main.py                                   1           0  4.72s           2023-01-08T08:45:04
+================================================================================
+[2023-01-08T08:45:40.006+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2023-01-08T08:45:40.020+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2023-01-08T08:45:40.024+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2023-01-08T08:45:42.674+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2023-01-08T08:45:45.148+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15

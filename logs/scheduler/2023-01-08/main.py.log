@@ -1672,3 +1672,163 @@ TypeError: __init__() got an unexpected keyword argument 'key_path'
 [2023-01-08T08:42:09.521+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:09.520+0000] {dag.py:2585} INFO - Sync 1 DAGs
 [2023-01-08T08:42:09.716+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:09.716+0000] {dag.py:3340} INFO - Setting next_dagrun for dpt_cosmetic to 2023-01-07T00:00:00+00:00, run_after=2023-01-08T00:00:00+00:00
 [2023-01-08T08:42:09.840+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/main.py took 4.853 seconds
+[2023-01-08T08:42:40.021+0000] {processor.py:154} INFO - Started process (PID=255) to work on /opt/airflow/dags/main.py
+[2023-01-08T08:42:40.025+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2023-01-08T08:42:40.028+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:40.028+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2023-01-08T08:42:42.693+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:53 RemovedInAirflow3Warning: This module is deprecated. Please use `airflow.providers.common.sql.hooks.sql`.
+[2023-01-08T08:42:42.863+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLCheckOperator'`.
+[2023-01-08T08:42:42.878+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLIntervalCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLIntervalCheckOperator'`.
+[2023-01-08T08:42:42.883+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLValueCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLValueCheckOperator'`.
+[2023-01-08T08:42:43.273+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.270+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-08T08:42:43.333+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.332+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-08T08:42:43.344+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/param.py:64 RemovedInAirflow3Warning: The use of non-json-serializable params is deprecated and will be removed in a future release
+[2023-01-08T08:42:43.354+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py:408 RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+[2023-01-08T08:42:43.369+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.368+0000] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): private_info.load_to_google_storage>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:42:43.370+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.370+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, private_info.load_to_google_storage already registered for DAG: dpt_cosmetic
+[2023-01-08T08:42:43.373+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.372+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, transaction_01.check_table already registered for DAG: dpt_cosmetic
+[2023-01-08T08:42:43.374+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.374+0000] {taskmixin.py:205} WARNING - Dependency <Task(BranchPythonOperator): transaction_01.check_table>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:42:43.377+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.376+0000] {taskmixin.py:205} WARNING - Dependency <Task(GCSToBigQueryOperator): transaction_01.insert_data>, second_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:42:43.379+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.378+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): second_stage_completed>, transaction_01.insert_data already registered for DAG: dpt_cosmetic
+[2023-01-08T08:42:43.417+0000] {processor.py:766} INFO - DAG(s) dict_keys(['dpt_cosmetic']) retrieved from /opt/airflow/dags/main.py
+[2023-01-08T08:42:43.825+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.824+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-01-08T08:42:43.962+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:42:43.961+0000] {dag.py:3340} INFO - Setting next_dagrun for dpt_cosmetic to 2023-01-07T00:00:00+00:00, run_after=2023-01-08T00:00:00+00:00
+[2023-01-08T08:42:44.069+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/main.py took 4.062 seconds
+[2023-01-08T08:43:14.787+0000] {processor.py:154} INFO - Started process (PID=260) to work on /opt/airflow/dags/main.py
+[2023-01-08T08:43:14.792+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2023-01-08T08:43:14.796+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:14.795+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2023-01-08T08:43:17.847+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:53 RemovedInAirflow3Warning: This module is deprecated. Please use `airflow.providers.common.sql.hooks.sql`.
+[2023-01-08T08:43:18.033+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLCheckOperator'`.
+[2023-01-08T08:43:18.048+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLIntervalCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLIntervalCheckOperator'`.
+[2023-01-08T08:43:18.054+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLValueCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLValueCheckOperator'`.
+[2023-01-08T08:43:18.419+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.415+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-08T08:43:18.474+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.473+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-08T08:43:18.489+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/param.py:64 RemovedInAirflow3Warning: The use of non-json-serializable params is deprecated and will be removed in a future release
+[2023-01-08T08:43:18.496+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py:408 RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+[2023-01-08T08:43:18.517+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.516+0000] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): private_info.load_to_google_storage>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:18.520+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.519+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, private_info.load_to_google_storage already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:18.522+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.522+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, transaction_01.check_table already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:18.525+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.524+0000] {taskmixin.py:205} WARNING - Dependency <Task(BranchPythonOperator): transaction_01.check_table>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:18.528+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.527+0000] {taskmixin.py:205} WARNING - Dependency <Task(GCSToBigQueryOperator): transaction_01.insert_data>, second_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:18.530+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.529+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): second_stage_completed>, transaction_01.insert_data already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:18.575+0000] {processor.py:766} INFO - DAG(s) dict_keys(['dpt_cosmetic']) retrieved from /opt/airflow/dags/main.py
+[2023-01-08T08:43:18.953+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:18.952+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-01-08T08:43:19.097+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:19.096+0000] {dag.py:3340} INFO - Setting next_dagrun for dpt_cosmetic to 2023-01-07T00:00:00+00:00, run_after=2023-01-08T00:00:00+00:00
+[2023-01-08T08:43:19.205+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/main.py took 4.452 seconds
+[2023-01-08T08:43:49.558+0000] {processor.py:154} INFO - Started process (PID=264) to work on /opt/airflow/dags/main.py
+[2023-01-08T08:43:49.563+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2023-01-08T08:43:49.568+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:49.567+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2023-01-08T08:43:52.778+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:53 RemovedInAirflow3Warning: This module is deprecated. Please use `airflow.providers.common.sql.hooks.sql`.
+[2023-01-08T08:43:53.022+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLCheckOperator'`.
+[2023-01-08T08:43:53.047+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLIntervalCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLIntervalCheckOperator'`.
+[2023-01-08T08:43:53.056+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLValueCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLValueCheckOperator'`.
+[2023-01-08T08:43:53.539+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.534+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-08T08:43:53.605+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.604+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-08T08:43:53.623+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/param.py:64 RemovedInAirflow3Warning: The use of non-json-serializable params is deprecated and will be removed in a future release
+[2023-01-08T08:43:53.632+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py:408 RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+[2023-01-08T08:43:53.653+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.653+0000] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): private_info.load_to_google_storage>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:53.658+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.657+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, private_info.load_to_google_storage already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:53.661+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.661+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, transaction_01.check_table already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:53.664+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.663+0000] {taskmixin.py:205} WARNING - Dependency <Task(BranchPythonOperator): transaction_01.check_table>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:53.668+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.667+0000] {taskmixin.py:205} WARNING - Dependency <Task(GCSToBigQueryOperator): transaction_01.insert_data>, second_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:53.670+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:53.670+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): second_stage_completed>, transaction_01.insert_data already registered for DAG: dpt_cosmetic
+[2023-01-08T08:43:53.727+0000] {processor.py:766} INFO - DAG(s) dict_keys(['dpt_cosmetic']) retrieved from /opt/airflow/dags/main.py
+[2023-01-08T08:43:54.142+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:54.142+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-01-08T08:43:54.296+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:43:54.295+0000] {dag.py:3340} INFO - Setting next_dagrun for dpt_cosmetic to 2023-01-07T00:00:00+00:00, run_after=2023-01-08T00:00:00+00:00
+[2023-01-08T08:43:54.417+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/main.py took 4.875 seconds
+[2023-01-08T08:44:25.099+0000] {processor.py:154} INFO - Started process (PID=269) to work on /opt/airflow/dags/main.py
+[2023-01-08T08:44:25.106+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2023-01-08T08:44:25.112+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:25.111+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2023-01-08T08:44:27.709+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:53 RemovedInAirflow3Warning: This module is deprecated. Please use `airflow.providers.common.sql.hooks.sql`.
+[2023-01-08T08:44:27.867+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLCheckOperator'`.
+[2023-01-08T08:44:27.881+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLIntervalCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLIntervalCheckOperator'`.
+[2023-01-08T08:44:27.887+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLValueCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLValueCheckOperator'`.
+[2023-01-08T08:44:28.249+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.245+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-08T08:44:28.299+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.298+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-08T08:44:28.309+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/param.py:64 RemovedInAirflow3Warning: The use of non-json-serializable params is deprecated and will be removed in a future release
+[2023-01-08T08:44:28.315+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py:408 RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+[2023-01-08T08:44:28.329+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.328+0000] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): private_info.load_to_google_storage>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:44:28.330+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.330+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, private_info.load_to_google_storage already registered for DAG: dpt_cosmetic
+[2023-01-08T08:44:28.333+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.332+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, transaction_01.check_table already registered for DAG: dpt_cosmetic
+[2023-01-08T08:44:28.334+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.334+0000] {taskmixin.py:205} WARNING - Dependency <Task(BranchPythonOperator): transaction_01.check_table>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:44:28.337+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.336+0000] {taskmixin.py:205} WARNING - Dependency <Task(GCSToBigQueryOperator): transaction_01.insert_data>, second_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:44:28.339+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.338+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): second_stage_completed>, transaction_01.insert_data already registered for DAG: dpt_cosmetic
+[2023-01-08T08:44:28.379+0000] {processor.py:766} INFO - DAG(s) dict_keys(['dpt_cosmetic']) retrieved from /opt/airflow/dags/main.py
+[2023-01-08T08:44:28.742+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.741+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-01-08T08:44:28.885+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:28.884+0000] {dag.py:3340} INFO - Setting next_dagrun for dpt_cosmetic to 2023-01-07T00:00:00+00:00, run_after=2023-01-08T00:00:00+00:00
+[2023-01-08T08:44:28.981+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/main.py took 3.902 seconds
+[2023-01-08T08:44:59.431+0000] {processor.py:154} INFO - Started process (PID=273) to work on /opt/airflow/dags/main.py
+[2023-01-08T08:44:59.436+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2023-01-08T08:44:59.444+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:44:59.443+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2023-01-08T08:45:02.520+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:53 RemovedInAirflow3Warning: This module is deprecated. Please use `airflow.providers.common.sql.hooks.sql`.
+[2023-01-08T08:45:02.749+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLCheckOperator'`.
+[2023-01-08T08:45:02.769+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLIntervalCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLIntervalCheckOperator'`.
+[2023-01-08T08:45:02.777+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py:38 DeprecationWarning: The `airflow.operators.sql.SQLValueCheckOperator` class is deprecated. Please use `'airflow.providers.common.sql.operators.sql.SQLValueCheckOperator'`.
+[2023-01-08T08:45:03.203+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.199+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-08T08:45:03.273+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.271+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-08T08:45:03.286+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/param.py:64 RemovedInAirflow3Warning: The use of non-json-serializable params is deprecated and will be removed in a future release
+[2023-01-08T08:45:03.292+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py:408 RemovedInAirflow3Warning: provide_context is deprecated as of 2.0 and is no longer required
+[2023-01-08T08:45:03.309+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.308+0000] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): private_info.load_to_google_storage>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:45:03.311+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.310+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, private_info.load_to_google_storage already registered for DAG: dpt_cosmetic
+[2023-01-08T08:45:03.313+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.313+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): first_stage_completed>, transaction_01.check_table already registered for DAG: dpt_cosmetic
+[2023-01-08T08:45:03.315+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.314+0000] {taskmixin.py:205} WARNING - Dependency <Task(BranchPythonOperator): transaction_01.check_table>, first_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:45:03.317+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.317+0000] {taskmixin.py:205} WARNING - Dependency <Task(GCSToBigQueryOperator): transaction_01.insert_data>, second_stage_completed already registered for DAG: dpt_cosmetic
+[2023-01-08T08:45:03.319+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.318+0000] {taskmixin.py:205} WARNING - Dependency <Task(EmptyOperator): second_stage_completed>, transaction_01.insert_data already registered for DAG: dpt_cosmetic
+[2023-01-08T08:45:03.354+0000] {processor.py:766} INFO - DAG(s) dict_keys(['dpt_cosmetic']) retrieved from /opt/airflow/dags/main.py
+[2023-01-08T08:45:03.773+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.773+0000] {dag.py:2585} INFO - Sync 1 DAGs
+[2023-01-08T08:45:03.923+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:03.922+0000] {dag.py:3340} INFO - Setting next_dagrun for dpt_cosmetic to 2023-01-07T00:00:00+00:00, run_after=2023-01-08T00:00:00+00:00
+[2023-01-08T08:45:04.030+0000] {processor.py:176} INFO - Processing /opt/airflow/dags/main.py took 4.623 seconds
+[2023-01-08T08:45:34.730+0000] {processor.py:154} INFO - Started process (PID=277) to work on /opt/airflow/dags/main.py
+[2023-01-08T08:45:34.734+0000] {processor.py:756} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2023-01-08T08:45:34.738+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:34.737+0000] {dagbag.py:537} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2023-01-08T08:45:39.549+0000] {logging_mixin.py:120} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:53 RemovedInAirflow3Warning: This module is deprecated. Please use `airflow.providers.common.sql.hooks.sql`.
+[2023-01-08T08:45:47.148+0000] {logging_mixin.py:120} INFO - [2023-01-08T08:45:47.147+0000] {process_utils.py:256} INFO - Waiting up to 5 seconds for processes to exit...

@@ -74,7 +74,6 @@ with DAG("bq_process",start_date=datetime(2022,12,31),schedule_interval="@daily"
             elif table=="view_stats":
                 query=qr.view_query
                 
-            query='select * from cosmetic.{}'.format(table)
             bq_executor=BigQueryInsertJobOperator(
                 task_id="execute_query",
                 configuration={
