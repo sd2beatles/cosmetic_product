@@ -1,0 +1,28 @@
+[2023-01-01T01:17:01.814+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.extract manual__2023-01-01T01:16:47.891591+00:00 [queued]>
+[2023-01-01T01:17:01.892+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.extract manual__2023-01-01T01:16:47.891591+00:00 [queued]>
+[2023-01-01T01:17:01.894+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T01:17:01.896+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-01T01:17:01.899+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T01:17:02.066+0000] {taskinstance.py:1383} INFO - Executing <Task(ExtractOperator): transaction.extract> on 2023-01-01 01:16:47.891591+00:00
+[2023-01-01T01:17:02.094+0000] {standard_task_runner.py:55} INFO - Started process 883 to run task
+[2023-01-01T01:17:02.143+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.extract', 'manual__2023-01-01T01:16:47.891591+00:00', '--job-id', '131', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpgu8ppoqw']
+[2023-01-01T01:17:02.147+0000] {standard_task_runner.py:83} INFO - Job 131: Subtask transaction.extract
+[2023-01-01T01:17:02.777+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.extract manual__2023-01-01T01:16:47.891591+00:00 [running]> on host 6bd76effbc07
+[2023-01-01T01:17:03.799+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.extract
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T01:16:47.891591+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-01T01:16:47.891591+00:00
+[2023-01-01T01:17:03.864+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/extract_operator.py", line 22, in execute
+    csv_writer=open("{}.csv".format(self.db_collection,'w'))
+FileNotFoundError: [Errno 2] No such file or directory: 'transaction.csv'
+[2023-01-01T01:17:03.987+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction.extract, execution_date=20230101T011647, start_date=20230101T011701, end_date=20230101T011703
+[2023-01-01T01:17:04.163+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 131 for task transaction.extract ([Errno 2] No such file or directory: 'transaction.csv'; 883)
+[2023-01-01T01:17:04.297+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-01T01:17:04.468+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,67 @@
+[2023-01-07T04:46:36.420+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.view_stats.create_table manual__2023-01-07T04:46:16.333150+00:00 [queued]>
+[2023-01-07T04:46:36.568+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.view_stats.create_table manual__2023-01-07T04:46:16.333150+00:00 [queued]>
+[2023-01-07T04:46:36.589+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T04:46:36.591+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T04:46:36.593+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T04:46:36.881+0000] {taskinstance.py:1383} INFO - Executing <Task(BigQueryCreateEmptyTableOperator): view_stats.create_table> on 2023-01-07 04:46:16.333150+00:00
+[2023-01-07T04:46:36.919+0000] {standard_task_runner.py:55} INFO - Started process 281 to run task
+[2023-01-07T04:46:36.989+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_process', 'view_stats.create_table', 'manual__2023-01-07T04:46:16.333150+00:00', '--job-id', '522', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_dag.py', '--cfg-path', '/tmp/tmpwvx216jd']
+[2023-01-07T04:46:37.018+0000] {standard_task_runner.py:83} INFO - Job 522: Subtask view_stats.create_table
+[2023-01-07T04:46:37.625+0000] {task_command.py:376} INFO - Running <TaskInstance: bq_process.view_stats.create_table manual__2023-01-07T04:46:16.333150+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T04:46:38.713+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_process
+AIRFLOW_CTX_TASK_ID=view_stats.create_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-07T04:46:16.333150+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-07T04:46:16.333150+00:00
+[2023-01-07T04:46:38.726+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-07T04:46:38.821+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-07T04:46:38.838+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-07T04:46:38.888+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-07T04:46:39.925+0000] {bigquery.py:910} INFO - Creating table
+[2023-01-07T04:46:40.721+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 923, in execute
+    exists_ok=self.exists_ok,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 439, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 414, in create_empty_table
+    table=table, exists_ok=exists_ok, retry=retry
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 755, in create_table
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 782, in _call_api
+    return call()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 288, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/my-kubeflow-370515/datasets/cosmetic/tables?prettyPrint=false: Field stamp already exists in schema
+[2023-01-07T04:46:40.897+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=bq_process, task_id=view_stats.create_table, execution_date=20230107T044616, start_date=20230107T044636, end_date=20230107T044640
+[2023-01-07T04:46:41.034+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 522 for task view_stats.create_table (400 POST https://bigquery.googleapis.com/bigquery/v2/projects/my-kubeflow-370515/datasets/cosmetic/tables?prettyPrint=false: Field stamp already exists in schema; 281)
+[2023-01-07T04:46:41.080+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-07T04:46:41.398+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

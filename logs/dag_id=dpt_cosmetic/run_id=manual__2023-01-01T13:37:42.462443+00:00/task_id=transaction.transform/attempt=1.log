@@ -1,0 +1,42 @@
+[2023-01-01T13:37:54.359+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform manual__2023-01-01T13:37:42.462443+00:00 [queued]>
+[2023-01-01T13:37:54.408+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform manual__2023-01-01T13:37:42.462443+00:00 [queued]>
+[2023-01-01T13:37:54.410+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T13:37:54.411+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-01T13:37:54.413+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T13:37:54.520+0000] {taskinstance.py:1383} INFO - Executing <Task(Operator): transaction.transform> on 2023-01-01 13:37:42.462443+00:00
+[2023-01-01T13:37:54.535+0000] {standard_task_runner.py:55} INFO - Started process 198 to run task
+[2023-01-01T13:37:54.549+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.transform', 'manual__2023-01-01T13:37:42.462443+00:00', '--job-id', '178', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp7cign0s8']
+[2023-01-01T13:37:54.552+0000] {standard_task_runner.py:83} INFO - Job 178: Subtask transaction.transform
+[2023-01-01T13:37:54.822+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.transform manual__2023-01-01T13:37:42.462443+00:00 [running]> on host 6bd76effbc07
+[2023-01-01T13:37:55.155+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T13:37:42.462443+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-01T13:37:42.462443+00:00
+[2023-01-01T13:38:02.782+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/operator.py", line 88, in execute
+    df=self.transform_trans(df)
+  File "/opt/airflow/dags/utilties/operator.py", line 32, in transform_trans
+    trans.loc[abnormal_index,'details']={}
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 719, in __setitem__
+    indexer = self._get_setitem_indexer(key)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 660, in _get_setitem_indexer
+    return self._convert_tuple(key, is_setter=True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 785, in _convert_tuple
+    idx = self._convert_to_indexer(k, axis=i, is_setter=is_setter)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1257, in _convert_to_indexer
+    return self._get_listlike_indexer(key, axis)[1]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1314, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexing.py", line 1374, in _validate_read_indexer
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index([                                             ('_', 'i', 'd'),\n                                ('u', 's', 'e', 'r', '_', 'i', 'd'),\n                 ('s', 'h', 'o', 'r', 't', '_', 't', 'e', 'r', 'm'),\n                      ('l', 'o', 'n', 'g', '_', 't', 'e', 'r', 'm'),\n                 ('a', 'c', 'c', 'e', 's', 's', '_', 'd', 'a', 'y'),\n                                     ('a', 'c', 't', 'i', 'o', 'n'),\n                                ('d', 'e', 't', 'a', 'i', 'l', 's'),\n                                     ('d', 'e', 'v', 'i', 'c', 'e'),\n            ('u', 's', 'e', 'r', '_', 'a', 'n', 'g', 'e', 'n', 't'),\n                                     ('s', 'o', 'u', 'r', 'c', 'e'),\n                                                         ('i', 'p'),\n       ('l', 'a', 's', 't', '_', 'u', 'p', 'd', 'a', 't', 'e', 'd')],\n      dtype='object')] are in the [index]"
+[2023-01-01T13:38:02.821+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction.transform, execution_date=20230101T133742, start_date=20230101T133754, end_date=20230101T133802
+[2023-01-01T13:38:02.874+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 178 for task transaction.transform ("None of [Index([                                             ('_', 'i', 'd'),\n                                ('u', 's', 'e', 'r', '_', 'i', 'd'),\n                 ('s', 'h', 'o', 'r', 't', '_', 't', 'e', 'r', 'm'),\n                      ('l', 'o', 'n', 'g', '_', 't', 'e', 'r', 'm'),\n                 ('a', 'c', 'c', 'e', 's', 's', '_', 'd', 'a', 'y'),\n                                     ('a', 'c', 't', 'i', 'o', 'n'),\n                                ('d', 'e', 't', 'a', 'i', 'l', 's'),\n                                     ('d', 'e', 'v', 'i', 'c', 'e'),\n            ('u', 's', 'e', 'r', '_', 'a', 'n', 'g', 'e', 'n', 't'),\n                                     ('s', 'o', 'u', 'r', 'c', 'e'),\n                                                         ('i', 'p'),\n       ('l', 'a', 's', 't', '_', 'u', 'p', 'd', 'a', 't', 'e', 'd')],\n      dtype='object')] are in the [index]"; 198)
+[2023-01-01T13:38:02.941+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-01T13:38:03.021+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

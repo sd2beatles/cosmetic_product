@@ -1,0 +1,25 @@
+[2023-01-07T05:07:32.522+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.conversion_stats.check_table manual__2023-01-07T05:07:23.575265+00:00 [queued]>
+[2023-01-07T05:07:32.577+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.conversion_stats.check_table manual__2023-01-07T05:07:23.575265+00:00 [queued]>
+[2023-01-07T05:07:32.579+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:07:32.580+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:07:32.582+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:07:32.677+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): conversion_stats.check_table> on 2023-01-07 05:07:23.575265+00:00
+[2023-01-07T05:07:32.694+0000] {standard_task_runner.py:55} INFO - Started process 311 to run task
+[2023-01-07T05:07:32.715+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_process', 'conversion_stats.check_table', 'manual__2023-01-07T05:07:23.575265+00:00', '--job-id', '532', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_dag.py', '--cfg-path', '/tmp/tmpqxcgbwac']
+[2023-01-07T05:07:32.730+0000] {standard_task_runner.py:83} INFO - Job 532: Subtask conversion_stats.check_table
+[2023-01-07T05:07:33.524+0000] {task_command.py:376} INFO - Running <TaskInstance: bq_process.conversion_stats.check_table manual__2023-01-07T05:07:23.575265+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:07:34.442+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_process
+AIRFLOW_CTX_TASK_ID=conversion_stats.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-07T05:07:23.575265+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-07T05:07:23.575265+00:00
+[2023-01-07T05:07:35.168+0000] {python.py:177} INFO - Done. Returned value was: conversion_stats.execute_query
+[2023-01-07T05:07:35.174+0000] {skipmixin.py:155} INFO - Following branch conversion_stats.execute_query
+[2023-01-07T05:07:35.178+0000] {skipmixin.py:190} INFO - Skipping tasks ['conversion_stats.create_table']
+[2023-01-07T05:07:35.532+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=bq_process, task_id=conversion_stats.check_table, execution_date=20230107T050723, start_date=20230107T050732, end_date=20230107T050735
+[2023-01-07T05:07:35.705+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:07:36.241+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

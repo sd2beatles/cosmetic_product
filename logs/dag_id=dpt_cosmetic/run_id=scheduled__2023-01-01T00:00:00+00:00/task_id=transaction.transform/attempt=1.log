@@ -1,0 +1,133 @@
+[2023-01-02T15:46:14.703+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T15:46:14.756+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T15:46:14.758+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T15:46:14.759+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T15:46:14.760+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T15:46:14.838+0000] {taskinstance.py:1383} INFO - Executing <Task(TransformOperator): transaction.transform> on 2023-01-01 00:00:00+00:00
+[2023-01-02T15:46:14.858+0000] {standard_task_runner.py:55} INFO - Started process 103 to run task
+[2023-01-02T15:46:14.874+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.transform', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '211', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmphk9h1cle']
+[2023-01-02T15:46:14.877+0000] {standard_task_runner.py:83} INFO - Job 211: Subtask transaction.transform
+[2023-01-02T15:46:14.942+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T15:46:15.191+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T15:46:15.808+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T15:46:30.628+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  errors=errors,
+
+[2023-01-02T15:46:31.939+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/operator.py", line 86, in execute
+    self.save_to_local(df)
+TypeError: save_to_local() missing 1 required positional argument: 'data'
+[2023-01-02T15:46:31.986+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction.transform, execution_date=20230101T000000, start_date=20230102T154614, end_date=20230102T154631
+[2023-01-02T15:46:32.069+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 211 for task transaction.transform (save_to_local() missing 1 required positional argument: 'data'; 103)
+[2023-01-02T15:46:32.158+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-02T15:46:32.258+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-02T16:32:26.756+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:32:26.941+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:32:26.943+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:32:26.945+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:32:26.946+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:32:27.092+0000] {taskinstance.py:1383} INFO - Executing <Task(TransformOperator): transaction.transform> on 2023-01-01 00:00:00+00:00
+[2023-01-02T16:32:27.109+0000] {standard_task_runner.py:55} INFO - Started process 212 to run task
+[2023-01-02T16:32:27.157+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.transform', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '224', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp5_vwaa1u']
+[2023-01-02T16:32:27.190+0000] {standard_task_runner.py:83} INFO - Job 224: Subtask transaction.transform
+[2023-01-02T16:32:27.339+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T16:32:29.377+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:32:30.397+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T16:32:40.170+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  errors=errors,
+
+[2023-01-02T16:32:50.765+0000] {operator.py:104} INFO - successfully save the file,transaction
+[2023-01-02T16:32:50.884+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=transaction.transform, execution_date=20230101T000000, start_date=20230102T163226, end_date=20230102T163250
+[2023-01-02T16:32:51.050+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-02T16:32:51.141+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-02T16:37:45.806+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:37:45.863+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:37:45.865+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:37:45.866+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:37:45.868+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:37:46.542+0000] {taskinstance.py:1383} INFO - Executing <Task(TransformOperator): transaction.transform> on 2023-01-01 00:00:00+00:00
+[2023-01-02T16:37:46.611+0000] {standard_task_runner.py:55} INFO - Started process 294 to run task
+[2023-01-02T16:37:46.629+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.transform', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '235', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp_7nlm5is']
+[2023-01-02T16:37:46.634+0000] {standard_task_runner.py:83} INFO - Job 235: Subtask transaction.transform
+[2023-01-02T16:37:46.704+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T16:37:48.464+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:37:49.155+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T16:37:56.673+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  errors=errors,
+
+[2023-01-02T16:38:00.186+0000] {operator.py:104} INFO - successfully save the file,transaction
+[2023-01-02T16:38:00.269+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=transaction.transform, execution_date=20230101T000000, start_date=20230102T163745, end_date=20230102T163800
+[2023-01-02T16:38:00.363+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-02T16:38:00.472+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-01-02T16:45:03.822+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:45:03.879+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:45:03.881+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:45:03.883+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:45:03.884+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:45:03.987+0000] {taskinstance.py:1383} INFO - Executing <Task(TransformOperator): transaction.transform> on 2023-01-01 00:00:00+00:00
+[2023-01-02T16:45:04.010+0000] {standard_task_runner.py:55} INFO - Started process 403 to run task
+[2023-01-02T16:45:04.049+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.transform', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '251', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpkj0arx42']
+[2023-01-02T16:45:04.055+0000] {standard_task_runner.py:83} INFO - Job 251: Subtask transaction.transform
+[2023-01-02T16:45:04.119+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T16:45:05.578+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.transform scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:45:06.449+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T16:45:17.015+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  errors=errors,
+
+[2023-01-02T16:45:22.290+0000] {operator.py:104} INFO - successfully save the file,transaction
+[2023-01-02T16:45:22.404+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=transaction.transform, execution_date=20230101T000000, start_date=20230102T164503, end_date=20230102T164522
+[2023-01-02T16:45:22.828+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-02T16:45:22.971+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

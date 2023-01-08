@@ -1,0 +1,60 @@
+[2023-01-07T04:42:40.668+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.product_stats.check_table scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T04:42:40.748+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.product_stats.check_table scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T04:42:40.750+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T04:42:40.752+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T04:42:40.754+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T04:42:40.932+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): product_stats.check_table> on 2023-01-06 00:00:00+00:00
+[2023-01-07T04:42:40.973+0000] {standard_task_runner.py:55} INFO - Started process 251 to run task
+[2023-01-07T04:42:41.006+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_process', 'product_stats.check_table', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '510', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_dag.py', '--cfg-path', '/tmp/tmp8nvn8q88']
+[2023-01-07T04:42:41.034+0000] {standard_task_runner.py:83} INFO - Job 510: Subtask product_stats.check_table
+[2023-01-07T04:42:41.159+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T04:42:41.599+0000] {task_command.py:376} INFO - Running <TaskInstance: bq_process.product_stats.check_table scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T04:42:42.905+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_process
+AIRFLOW_CTX_TASK_ID=product_stats.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T04:42:43.729+0000] {python.py:177} INFO - Done. Returned value was: create_table
+[2023-01-07T04:42:43.794+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 225, in execute
+    f"Branch callable must return valid task_ids. Invalid tasks found: {invalid_task_ids}"
+airflow.exceptions.AirflowException: Branch callable must return valid task_ids. Invalid tasks found: {'create_table'}
+[2023-01-07T04:42:43.814+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=bq_process, task_id=product_stats.check_table, execution_date=20230106T000000, start_date=20230107T044240, end_date=20230107T044243
+[2023-01-07T04:42:43.890+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 510 for task product_stats.check_table (Branch callable must return valid task_ids. Invalid tasks found: {'create_table'}; 251)
+[2023-01-07T04:42:43.950+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-07T04:42:44.571+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-07T05:15:49.812+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.product_stats.check_table scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:15:49.906+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.product_stats.check_table scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:15:49.908+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:15:49.910+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:15:49.912+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:15:50.016+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): product_stats.check_table> on 2023-01-06 00:00:00+00:00
+[2023-01-07T05:15:50.038+0000] {standard_task_runner.py:55} INFO - Started process 365 to run task
+[2023-01-07T05:15:50.058+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_process', 'product_stats.check_table', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '550', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_dag.py', '--cfg-path', '/tmp/tmpqci85cuf']
+[2023-01-07T05:15:50.071+0000] {standard_task_runner.py:83} INFO - Job 550: Subtask product_stats.check_table
+[2023-01-07T05:15:50.161+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T05:15:50.544+0000] {task_command.py:376} INFO - Running <TaskInstance: bq_process.product_stats.check_table scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:15:51.104+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_process
+AIRFLOW_CTX_TASK_ID=product_stats.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T05:15:52.079+0000] {python.py:177} INFO - Done. Returned value was: product_stats.execute_query
+[2023-01-07T05:15:52.081+0000] {skipmixin.py:155} INFO - Following branch product_stats.execute_query
+[2023-01-07T05:15:52.083+0000] {skipmixin.py:190} INFO - Skipping tasks ['product_stats.create_table']
+[2023-01-07T05:15:52.402+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=bq_process, task_id=product_stats.check_table, execution_date=20230106T000000, start_date=20230107T051549, end_date=20230107T051552
+[2023-01-07T05:15:52.533+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:15:53.605+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

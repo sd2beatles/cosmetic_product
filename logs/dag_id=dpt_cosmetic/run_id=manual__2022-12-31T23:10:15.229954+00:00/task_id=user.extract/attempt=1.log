@@ -1,0 +1,28 @@
+[2022-12-31T23:10:30.359+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.extract manual__2022-12-31T23:10:15.229954+00:00 [queued]>
+[2022-12-31T23:10:30.423+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.extract manual__2022-12-31T23:10:15.229954+00:00 [queued]>
+[2022-12-31T23:10:30.425+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-31T23:10:30.427+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-12-31T23:10:30.429+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-31T23:10:30.620+0000] {taskinstance.py:1383} INFO - Executing <Task(ExtractOperator): user.extract> on 2022-12-31 23:10:15.229954+00:00
+[2022-12-31T23:10:30.674+0000] {standard_task_runner.py:55} INFO - Started process 123 to run task
+[2022-12-31T23:10:30.698+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.extract', 'manual__2022-12-31T23:10:15.229954+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpypj1hgbh']
+[2022-12-31T23:10:30.704+0000] {standard_task_runner.py:83} INFO - Job 37: Subtask user.extract
+[2022-12-31T23:10:31.276+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.extract manual__2022-12-31T23:10:15.229954+00:00 [running]> on host 6bd76effbc07
+[2022-12-31T23:10:32.144+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.extract
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-31T23:10:15.229954+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-31T23:10:15.229954+00:00
+[2022-12-31T23:10:32.392+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/extract_operator.py", line 30, in execute
+    self.log.info(f"Extracting for source {self.source}")
+AttributeError: 'ExtractOperator' object has no attribute 'source'
+[2022-12-31T23:10:32.485+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=user.extract, execution_date=20221231T231015, start_date=20221231T231030, end_date=20221231T231032
+[2022-12-31T23:10:32.701+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 37 for task user.extract ('ExtractOperator' object has no attribute 'source'; 123)
+[2022-12-31T23:10:32.772+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2022-12-31T23:10:32.928+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

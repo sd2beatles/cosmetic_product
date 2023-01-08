@@ -1,0 +1,24 @@
+[2023-01-01T01:08:54.825+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.extract manual__2023-01-01T01:08:41.937317+00:00 [queued]>
+[2023-01-01T01:08:54.880+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.extract manual__2023-01-01T01:08:41.937317+00:00 [queued]>
+[2023-01-01T01:08:54.882+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T01:08:54.883+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-01T01:08:54.885+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T01:08:54.967+0000] {taskinstance.py:1383} INFO - Executing <Task(ExtractOperator): user.extract> on 2023-01-01 01:08:41.937317+00:00
+[2023-01-01T01:08:54.982+0000] {standard_task_runner.py:55} INFO - Started process 833 to run task
+[2023-01-01T01:08:54.997+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.extract', 'manual__2023-01-01T01:08:41.937317+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpstuurrhu']
+[2023-01-01T01:08:55.000+0000] {standard_task_runner.py:83} INFO - Job 125: Subtask user.extract
+[2023-01-01T01:08:55.513+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.extract manual__2023-01-01T01:08:41.937317+00:00 [running]> on host 6bd76effbc07
+[2023-01-01T01:08:56.043+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.extract
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T01:08:41.937317+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-01T01:08:41.937317+00:00
+[2023-01-01T01:08:56.099+0000] {logging_mixin.py:120} INFO - <pymongo.cursor.Cursor object at 0x7f7cb741c850>
+[2023-01-01T01:08:56.266+0000] {logging_mixin.py:120} INFO - [{'_id': ObjectId('63a8d93c9acbe2189ed9b9b0'), 'user_id': 'u0002', 'email': 'u0002@gmail.com', 'gender': 'F', 'age': 34, 'country': 'HongKong/HK', 'credit_card': True, 'membership': False, 'register_date': datetime.datetime(2019, 2, 9, 12, 46), 'first_created': datetime.datetime(2022, 12, 26, 8, 14, 4, 941000)}]
+[2023-01-01T01:08:56.324+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=user.extract, execution_date=20230101T010841, start_date=20230101T010854, end_date=20230101T010856
+[2023-01-01T01:08:56.430+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-01T01:08:56.532+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

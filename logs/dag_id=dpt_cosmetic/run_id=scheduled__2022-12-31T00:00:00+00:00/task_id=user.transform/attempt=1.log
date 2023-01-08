@@ -1,0 +1,35 @@
+[2023-01-01T13:14:50.570+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.transform scheduled__2022-12-31T00:00:00+00:00 [queued]>
+[2023-01-01T13:14:50.639+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.transform scheduled__2022-12-31T00:00:00+00:00 [queued]>
+[2023-01-01T13:14:50.641+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T13:14:50.643+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-01T13:14:50.644+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T13:14:50.753+0000] {taskinstance.py:1383} INFO - Executing <Task(Operator): user.transform> on 2022-12-31 00:00:00+00:00
+[2023-01-01T13:14:50.772+0000] {standard_task_runner.py:55} INFO - Started process 83 to run task
+[2023-01-01T13:14:50.788+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.transform', 'scheduled__2022-12-31T00:00:00+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpj1nsjsdi']
+[2023-01-01T13:14:50.791+0000] {standard_task_runner.py:83} INFO - Job 163: Subtask user.transform
+[2023-01-01T13:14:50.867+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-01T13:14:51.191+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.transform scheduled__2022-12-31T00:00:00+00:00 [running]> on host 6bd76effbc07
+[2023-01-01T13:14:51.573+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.transform
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-31T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-31T00:00:00+00:00
+[2023-01-01T13:14:51.756+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/operator.py", line 85, in execute
+    df=self.transform_user(df)
+  File "/opt/airflow/dags/utilties/operator.py", line 22, in transform_user
+    user['gender']=user.gender.map(lambda x:"F" if x[0].lower()=='f' else "M")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 5487, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'gender'
+[2023-01-01T13:14:51.797+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=user.transform, execution_date=20221231T000000, start_date=20230101T131450, end_date=20230101T131451
+[2023-01-01T13:14:51.855+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 163 for task user.transform ('DataFrame' object has no attribute 'gender'; 83)
+[2023-01-01T13:14:51.885+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-01T13:14:52.003+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

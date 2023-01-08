@@ -1,0 +1,29 @@
+[2023-01-07T04:42:44.075+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.view_stats.check_table manual__2023-01-07T04:42:33.145090+00:00 [queued]>
+[2023-01-07T04:42:44.140+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: bq_process.view_stats.check_table manual__2023-01-07T04:42:33.145090+00:00 [queued]>
+[2023-01-07T04:42:44.142+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T04:42:44.145+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T04:42:44.147+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T04:42:44.268+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): view_stats.check_table> on 2023-01-07 04:42:33.145090+00:00
+[2023-01-07T04:42:44.285+0000] {standard_task_runner.py:55} INFO - Started process 254 to run task
+[2023-01-07T04:42:44.304+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_process', 'view_stats.check_table', 'manual__2023-01-07T04:42:33.145090+00:00', '--job-id', '513', '--raw', '--subdir', 'DAGS_FOLDER/bigquery_dag.py', '--cfg-path', '/tmp/tmplve2s61v']
+[2023-01-07T04:42:44.312+0000] {standard_task_runner.py:83} INFO - Job 513: Subtask view_stats.check_table
+[2023-01-07T04:42:44.702+0000] {task_command.py:376} INFO - Running <TaskInstance: bq_process.view_stats.check_table manual__2023-01-07T04:42:33.145090+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T04:42:45.151+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_process
+AIRFLOW_CTX_TASK_ID=view_stats.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-07T04:42:33.145090+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-07T04:42:33.145090+00:00
+[2023-01-07T04:42:45.826+0000] {python.py:177} INFO - Done. Returned value was: create_table
+[2023-01-07T04:42:45.905+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 225, in execute
+    f"Branch callable must return valid task_ids. Invalid tasks found: {invalid_task_ids}"
+airflow.exceptions.AirflowException: Branch callable must return valid task_ids. Invalid tasks found: {'create_table'}
+[2023-01-07T04:42:45.921+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=bq_process, task_id=view_stats.check_table, execution_date=20230107T044233, start_date=20230107T044244, end_date=20230107T044245
+[2023-01-07T04:42:46.006+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 513 for task view_stats.check_table (Branch callable must return valid task_ids. Invalid tasks found: {'create_table'}; 254)
+[2023-01-07T04:42:46.042+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-07T04:42:46.388+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

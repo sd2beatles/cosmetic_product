@@ -1,0 +1,32 @@
+[2023-01-05T21:18:27.960+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.test manual__2023-01-05T21:18:20.650038+00:00 [queued]>
+[2023-01-05T21:18:28.041+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.test manual__2023-01-05T21:18:20.650038+00:00 [queued]>
+[2023-01-05T21:18:28.043+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T21:18:28.045+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-05T21:18:28.047+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T21:18:28.129+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): test> on 2023-01-05 21:18:20.650038+00:00
+[2023-01-05T21:18:28.154+0000] {standard_task_runner.py:55} INFO - Started process 84 to run task
+[2023-01-05T21:18:28.168+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'test', 'manual__2023-01-05T21:18:20.650038+00:00', '--job-id', '308', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp5e544dge']
+[2023-01-05T21:18:28.178+0000] {standard_task_runner.py:83} INFO - Job 308: Subtask test
+[2023-01-05T21:18:28.486+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.test manual__2023-01-05T21:18:20.650038+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-05T21:18:28.844+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=test
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T21:18:20.650038+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-05T21:18:20.650038+00:00
+[2023-01-05T21:18:28.851+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/main.py", line 135, in test
+    if 'user' in tables:
+TypeError: argument of type 'BigQueryGetDatasetTablesOperator' is not iterable
+[2023-01-05T21:18:28.903+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=test, execution_date=20230105T211820, start_date=20230105T211827, end_date=20230105T211828
+[2023-01-05T21:18:28.949+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 308 for task test (argument of type 'BigQueryGetDatasetTablesOperator' is not iterable; 84)
+[2023-01-05T21:18:28.982+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-05T21:18:29.063+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

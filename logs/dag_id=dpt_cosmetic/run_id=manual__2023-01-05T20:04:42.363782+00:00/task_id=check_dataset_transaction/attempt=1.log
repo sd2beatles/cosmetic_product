@@ -1,0 +1,74 @@
+[2023-01-05T20:04:58.959+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.check_dataset_transaction manual__2023-01-05T20:04:42.363782+00:00 [queued]>
+[2023-01-05T20:04:59.019+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.check_dataset_transaction manual__2023-01-05T20:04:42.363782+00:00 [queued]>
+[2023-01-05T20:04:59.020+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T20:04:59.022+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-05T20:04:59.024+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T20:04:59.098+0000] {taskinstance.py:1383} INFO - Executing <Task(BigQueryCheckOperator): check_dataset_transaction> on 2023-01-05 20:04:42.363782+00:00
+[2023-01-05T20:04:59.118+0000] {standard_task_runner.py:55} INFO - Started process 58 to run task
+[2023-01-05T20:04:59.136+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'check_dataset_transaction', 'manual__2023-01-05T20:04:42.363782+00:00', '--job-id', '301', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpfyhwkd0l']
+[2023-01-05T20:04:59.146+0000] {standard_task_runner.py:83} INFO - Job 301: Subtask check_dataset_transaction
+[2023-01-05T20:04:59.480+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.check_dataset_transaction manual__2023-01-05T20:04:42.363782+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-05T20:04:59.893+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=check_dataset_transaction
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T20:04:42.363782+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-05T20:04:42.363782+00:00
+[2023-01-05T20:04:59.897+0000] {sql.py:508} INFO - Executing SQL check: SELECT 1 FROM cosmetic.user
+[2023-01-05T20:04:59.901+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-05T20:04:59.948+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-05T20:04:59.952+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:132: DeprecationWarning: This method will be deprecated. Please use `BigQueryHook.get_client` method
+  "This method will be deprecated. Please use `BigQueryHook.get_client` method", DeprecationWarning
+
+[2023-01-05T20:05:00.868+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:2058: DeprecationWarning: This method is deprecated. Please use `BigQueryHook.insert_job` method.
+  "This method is deprecated. Please use `BigQueryHook.insert_job` method.", DeprecationWarning
+
+[2023-01-05T20:05:00.873+0000] {bigquery.py:1554} INFO - Inserting job ***_1672949100870493_0d8c8e0e3a42643ad661e41b7831068c
+[2023-01-05T20:05:01.238+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 509, in execute
+    records = self.get_db_hook().get_first(self.sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 233, in get_first
+    cur.execute(sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2623, in execute
+    self.job_id = self.hook.run_query(sql)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2192, in run_query
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 439, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1560, in insert_job
+    job.result(timeout=timeout, retry=retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1499, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1489, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 137, in result
+    raise self._exception
+google.api_core.exceptions.NotFound: 404 Not found: Table my-kubeflow-370515:cosmetic.user was not found in location asia-northeast3
+
+Location: asia-northeast3
+Job ID: airflow_1672949100870493_0d8c8e0e3a42643ad661e41b7831068c
+
+[2023-01-05T20:05:01.275+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=check_dataset_transaction, execution_date=20230105T200442, start_date=20230105T200458, end_date=20230105T200501
+[2023-01-05T20:05:01.329+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 301 for task check_dataset_transaction (404 Not found: Table my-kubeflow-370515:cosmetic.user was not found in location asia-northeast3
+
+Location: asia-northeast3
+Job ID: airflow_1672949100870493_0d8c8e0e3a42643ad661e41b7831068c
+; 58)
+[2023-01-05T20:05:01.364+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-05T20:05:01.458+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,46 @@
+[2023-01-05T21:42:06.458+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.table_check manual__2023-01-05T21:41:58.985975+00:00 [queued]>
+[2023-01-05T21:42:06.512+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.table_check manual__2023-01-05T21:41:58.985975+00:00 [queued]>
+[2023-01-05T21:42:06.513+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T21:42:06.515+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-05T21:42:06.516+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T21:42:06.592+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): table_check> on 2023-01-05 21:41:58.985975+00:00
+[2023-01-05T21:42:06.612+0000] {standard_task_runner.py:55} INFO - Started process 93 to run task
+[2023-01-05T21:42:06.629+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'table_check', 'manual__2023-01-05T21:41:58.985975+00:00', '--job-id', '311', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmphqe5j4ds']
+[2023-01-05T21:42:06.640+0000] {standard_task_runner.py:83} INFO - Job 311: Subtask table_check
+[2023-01-05T21:42:06.953+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.table_check manual__2023-01-05T21:41:58.985975+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-05T21:42:07.289+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=table_check
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T21:41:58.985975+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-05T21:41:58.985975+00:00
+[2023-01-05T21:42:07.295+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-05T21:42:07.339+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-05T21:42:07.387+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/main.py", line 138, in test
+    return hook.table_exists(PROJECT_ID,DATASET,'user')
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 427, in inner_wrapper
+    "You must use keyword arguments in this methods rather than positional"
+airflow.exceptions.AirflowException: You must use keyword arguments in this methods rather than positional
+[2023-01-05T21:42:07.414+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=table_check, execution_date=20230105T214158, start_date=20230105T214206, end_date=20230105T214207
+[2023-01-05T21:42:07.496+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 311 for task table_check (You must use keyword arguments in this methods rather than positional; 93)
+[2023-01-05T21:42:07.563+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-05T21:42:07.708+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

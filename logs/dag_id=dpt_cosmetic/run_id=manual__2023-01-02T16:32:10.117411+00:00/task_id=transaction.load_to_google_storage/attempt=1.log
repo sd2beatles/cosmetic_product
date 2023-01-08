@@ -1,0 +1,48 @@
+[2023-01-02T16:32:37.938+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.load_to_google_storage manual__2023-01-02T16:32:10.117411+00:00 [queued]>
+[2023-01-02T16:32:38.127+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.load_to_google_storage manual__2023-01-02T16:32:10.117411+00:00 [queued]>
+[2023-01-02T16:32:38.133+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:32:38.138+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:32:38.140+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:32:38.353+0000] {taskinstance.py:1383} INFO - Executing <Task(LocalToStorageOperator): transaction.load_to_google_storage> on 2023-01-02 16:32:10.117411+00:00
+[2023-01-02T16:32:38.374+0000] {standard_task_runner.py:55} INFO - Started process 233 to run task
+[2023-01-02T16:32:38.393+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.load_to_google_storage', 'manual__2023-01-02T16:32:10.117411+00:00', '--job-id', '229', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpdj6dvhgn']
+[2023-01-02T16:32:38.397+0000] {standard_task_runner.py:83} INFO - Job 229: Subtask transaction.load_to_google_storage
+[2023-01-02T16:32:39.684+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.load_to_google_storage manual__2023-01-02T16:32:10.117411+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:32:40.611+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-02T16:32:10.117411+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-02T16:32:10.117411+00:00
+[2023-01-02T16:32:40.633+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-02T16:32:40.799+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-02T16:32:41.011+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/operator.py", line 27, in execute
+    gcs.upload(self.bucket,self.dest_path,self.local_path)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 489, in upload
+    bucket = client.bucket(bucket_name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 279, in bucket
+    return Bucket(client=self, name=bucket_name, user_project=user_project)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/bucket.py", line 611, in __init__
+    name = _validate_name(name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/_helpers.py", line 81, in _validate_name
+    raise ValueError("Bucket names must start and end with a number or letter.")
+ValueError: Bucket names must start and end with a number or letter.
+[2023-01-02T16:32:41.216+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction.load_to_google_storage, execution_date=20230102T163210, start_date=20230102T163237, end_date=20230102T163241
+[2023-01-02T16:32:41.447+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 229 for task transaction.load_to_google_storage (Bucket names must start and end with a number or letter.; 233)
+[2023-01-02T16:32:41.662+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-02T16:32:42.042+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

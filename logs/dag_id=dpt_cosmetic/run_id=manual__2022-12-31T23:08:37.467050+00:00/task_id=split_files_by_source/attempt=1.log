@@ -1,0 +1,35 @@
+[2022-12-31T23:08:44.684+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.split_files_by_source manual__2022-12-31T23:08:37.467050+00:00 [queued]>
+[2022-12-31T23:08:44.728+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.split_files_by_source manual__2022-12-31T23:08:37.467050+00:00 [queued]>
+[2022-12-31T23:08:44.729+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-31T23:08:44.731+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-12-31T23:08:44.733+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-31T23:08:44.806+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): split_files_by_source> on 2022-12-31 23:08:37.467050+00:00
+[2022-12-31T23:08:44.821+0000] {standard_task_runner.py:55} INFO - Started process 99 to run task
+[2022-12-31T23:08:44.837+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'split_files_by_source', 'manual__2022-12-31T23:08:37.467050+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpbbwsmpzk']
+[2022-12-31T23:08:44.839+0000] {standard_task_runner.py:83} INFO - Job 33: Subtask split_files_by_source
+[2022-12-31T23:08:45.182+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.split_files_by_source manual__2022-12-31T23:08:37.467050+00:00 [running]> on host 6bd76effbc07
+[2022-12-31T23:08:45.884+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=split_files_by_source
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-31T23:08:37.467050+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-31T23:08:37.467050+00:00
+[2022-12-31T23:08:45.930+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-12-31T23:08:45.935+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', "sleep 1'"]
+[2022-12-31T23:08:46.014+0000] {subprocess.py:86} INFO - Output:
+[2022-12-31T23:08:46.063+0000] {subprocess.py:93} INFO - /bin/bash: -c: line 1: unexpected EOF while looking for matching `''
+[2022-12-31T23:08:46.067+0000] {subprocess.py:93} INFO - /bin/bash: -c: line 2: syntax error: unexpected end of file
+[2022-12-31T23:08:46.072+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2022-12-31T23:08:46.217+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2022-12-31T23:08:46.275+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=split_files_by_source, execution_date=20221231T230837, start_date=20221231T230844, end_date=20221231T230846
+[2022-12-31T23:08:46.407+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 33 for task split_files_by_source (Bash command failed. The command returned a non-zero exit code 2.; 99)
+[2022-12-31T23:08:46.476+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2022-12-31T23:08:46.821+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

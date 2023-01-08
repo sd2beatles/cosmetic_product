@@ -1,0 +1,79 @@
+[2023-01-07T05:19:32.820+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists manual__2023-01-07T05:15:53.603562+00:00 [queued]>
+[2023-01-07T05:19:33.594+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists manual__2023-01-07T05:15:53.603562+00:00 [queued]>
+[2023-01-07T05:19:33.613+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:19:33.702+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:19:33.723+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:19:34.750+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): ab-test.check_file_exists> on 2023-01-07 05:15:53.603562+00:00
+[2023-01-07T05:19:34.831+0000] {standard_task_runner.py:55} INFO - Started process 547 to run task
+[2023-01-07T05:19:34.895+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'ab-test.check_file_exists', 'manual__2023-01-07T05:15:53.603562+00:00', '--job-id', '591', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpjoc2kwfo']
+[2023-01-07T05:19:34.953+0000] {standard_task_runner.py:83} INFO - Job 591: Subtask ab-test.check_file_exists
+[2023-01-07T05:19:36.050+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.ab-test.check_file_exists manual__2023-01-07T05:15:53.603562+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:19:37.288+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=ab-test.check_file_exists
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-07T05:15:53.603562+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-07T05:15:53.603562+00:00
+[2023-01-07T05:19:37.297+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T05:19:37.300+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T05:19:37.457+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T05:19:38.574+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T05:19:39.068+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=ab-test.check_file_exists, execution_date=20230107T051553, start_date=20230107T051932, end_date=20230107T051939
+[2023-01-07T05:19:39.503+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:19:41.252+0000] {local_task_job.py:281} INFO - Skipping mini scheduling run due to exception: UPDATE task_instance SET state=%(state)s WHERE task_instance.dag_id = %(dag_id_1)s AND task_instance.run_id = %(run_id_1)s AND (task_instance.task_id, task_instance.map_index) IN ((%(param_1_1_1)s, %(param_1_1_2)s))
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.DeadlockDetected: deadlock detected
+DETAIL:  Process 19423 waits for ShareLock on transaction 164969; blocked by process 18021.
+Process 18021 waits for AccessExclusiveLock on tuple (1,4) of relation 16686 of database 16384; blocked by process 19425.
+Process 19425 waits for ShareLock on transaction 164973; blocked by process 19423.
+HINT:  See server log for query details.
+CONTEXT:  while updating tuple (7,1) in relation "task_instance"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/local_task_job.py", line 272, in _run_mini_scheduler_on_child_tasks
+    num = dag_run.schedule_tis(schedulable_tis)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 75, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagrun.py", line 1230, in schedule_tis
+    .update({TI.state: State.SCHEDULED}, synchronize_session=False)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3279, in update
+    execution_options={"synchronize_session": synchronize_session},
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.errors.DeadlockDetected) deadlock detected
+DETAIL:  Process 19423 waits for ShareLock on transaction 164969; blocked by process 18021.
+Process 18021 waits for AccessExclusiveLock on tuple (1,4) of relation 16686 of database 16384; blocked by process 19425.
+Process 19425 waits for ShareLock on transaction 164973; blocked by process 19423.
+HINT:  See server log for query details.
+CONTEXT:  while updating tuple (7,1) in relation "task_instance"
+
+[SQL: UPDATE task_instance SET state=%(state)s WHERE task_instance.dag_id = %(dag_id_1)s AND task_instance.run_id = %(run_id_1)s AND (task_instance.task_id, task_instance.map_index) IN ((%(param_1_1_1)s, %(param_1_1_2)s))]
+[parameters: {'state': <TaskInstanceState.SCHEDULED: 'scheduled'>, 'dag_id_1': 'dpt_cosmetic', 'run_id_1': 'manual__2023-01-07T05:15:53.603562+00:00', 'param_1_1_1': 'ab-test.load_to_google_storage', 'param_1_1_2': -1}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)

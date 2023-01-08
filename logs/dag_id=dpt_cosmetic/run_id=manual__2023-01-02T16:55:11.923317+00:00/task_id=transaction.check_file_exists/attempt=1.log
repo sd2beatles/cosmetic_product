@@ -1,0 +1,26 @@
+[2023-01-02T16:55:51.440+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.check_file_exists manual__2023-01-02T16:55:11.923317+00:00 [queued]>
+[2023-01-02T16:55:51.496+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.check_file_exists manual__2023-01-02T16:55:11.923317+00:00 [queued]>
+[2023-01-02T16:55:51.497+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:55:51.499+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:55:51.500+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:55:52.107+0000] {taskinstance.py:1383} INFO - Executing <Task(FileSensor): transaction.check_file_exists> on 2023-01-02 16:55:11.923317+00:00
+[2023-01-02T16:55:52.124+0000] {standard_task_runner.py:55} INFO - Started process 470 to run task
+[2023-01-02T16:55:52.141+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.check_file_exists', 'manual__2023-01-02T16:55:11.923317+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp44oyyzf_']
+[2023-01-02T16:55:52.143+0000] {standard_task_runner.py:83} INFO - Job 260: Subtask transaction.check_file_exists
+[2023-01-02T16:55:52.525+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.check_file_exists manual__2023-01-02T16:55:11.923317+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:55:53.094+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.check_file_exists
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-02T16:55:11.923317+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-02T16:55:11.923317+00:00
+[2023-01-02T16:55:53.132+0000] {base.py:71} INFO - Using connection ID 'file_sensor' for task execution.
+[2023-01-02T16:55:53.135+0000] {filesystem.py:58} INFO - Poking for file /opt/***/storage/transaction/2023-01-03.csv
+[2023-01-02T16:55:53.149+0000] {filesystem.py:63} INFO - Found File /opt/***/storage/transaction/2023-01-03.csv last modified: 20230102165543
+[2023-01-02T16:55:53.151+0000] {base.py:213} INFO - Success criteria met. Exiting.
+[2023-01-02T16:55:53.201+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=transaction.check_file_exists, execution_date=20230102T165511, start_date=20230102T165551, end_date=20230102T165553
+[2023-01-02T16:55:53.320+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-02T16:55:53.517+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

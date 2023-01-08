@@ -1,0 +1,27 @@
+[2023-01-06T20:31:08.023+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.check_file_exists manual__2023-01-06T20:30:39.090323+00:00 [queued]>
+[2023-01-06T20:31:08.194+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.check_file_exists manual__2023-01-06T20:30:39.090323+00:00 [queued]>
+[2023-01-06T20:31:08.196+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T20:31:08.204+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T20:31:08.206+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T20:31:08.543+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): private_info.check_file_exists> on 2023-01-06 20:30:39.090323+00:00
+[2023-01-06T20:31:08.572+0000] {standard_task_runner.py:55} INFO - Started process 290 to run task
+[2023-01-06T20:31:08.620+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'private_info.check_file_exists', 'manual__2023-01-06T20:30:39.090323+00:00', '--job-id', '424', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpwkxye_ip']
+[2023-01-06T20:31:08.633+0000] {standard_task_runner.py:83} INFO - Job 424: Subtask private_info.check_file_exists
+[2023-01-06T20:31:09.140+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.private_info.check_file_exists manual__2023-01-06T20:30:39.090323+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T20:31:09.697+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=private_info.check_file_exists
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T20:30:39.090323+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-06T20:30:39.090323+00:00
+[2023-01-06T20:31:09.705+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-06T20:31:09.711+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-06T20:31:09.775+0000] {subprocess.py:86} INFO - Output:
+[2023-01-06T20:31:10.781+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-06T20:31:10.897+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=private_info.check_file_exists, execution_date=20230106T203039, start_date=20230106T203108, end_date=20230106T203110
+[2023-01-06T20:31:10.993+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-06T20:31:11.203+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

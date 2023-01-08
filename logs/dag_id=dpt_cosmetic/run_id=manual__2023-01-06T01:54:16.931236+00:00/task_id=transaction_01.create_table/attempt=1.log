@@ -1,0 +1,82 @@
+[2023-01-06T01:54:22.777+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction_01.create_table manual__2023-01-06T01:54:16.931236+00:00 [queued]>
+[2023-01-06T01:54:22.805+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction_01.create_table manual__2023-01-06T01:54:16.931236+00:00 [queued]>
+[2023-01-06T01:54:22.806+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:54:22.807+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T01:54:22.808+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:54:22.843+0000] {taskinstance.py:1383} INFO - Executing <Task(BigQueryCreateEmptyTableOperator): transaction_01.create_table> on 2023-01-06 01:54:16.931236+00:00
+[2023-01-06T01:54:22.854+0000] {standard_task_runner.py:55} INFO - Started process 115 to run task
+[2023-01-06T01:54:22.862+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction_01.create_table', 'manual__2023-01-06T01:54:16.931236+00:00', '--job-id', '351', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpqu06ie9n']
+[2023-01-06T01:54:22.867+0000] {standard_task_runner.py:83} INFO - Job 351: Subtask transaction_01.create_table
+[2023-01-06T01:54:22.977+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction_01.create_table manual__2023-01-06T01:54:16.931236+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T01:54:23.132+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction_01.create_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T01:54:16.931236+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-06T01:54:16.931236+00:00
+[2023-01-06T01:54:23.134+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-06T01:54:23.148+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-06T01:54:23.150+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-06T01:54:23.160+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-06T01:54:23.634+0000] {gcs.py:340} ERROR - Download attempt of object: schema/transaction_01.json from schema/transaction_01.json has failed. Attempt: 1, max 1.
+[2023-01-06T01:54:23.635+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 1123, in download_blob_to_file
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 1003, in _do_download
+    response = download.consume(transport, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/download.py", line 233, in consume
+    retriable_request, self._get_status_code, self._retry_strategy
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/_request_helpers.py", line 148, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/download.py", line 214, in retriable_request
+    self._process_response(result)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/_download.py", line 189, in _process_response
+    response, _ACCEPTABLE_STATUS_CODES, self._get_status_code
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/_helpers.py", line 113, in require_status_code
+    *status_codes
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 904, in execute
+    schema_fields_string = gcs_hook.download_as_byte_array(gcs_bucket, gcs_object).decode("utf-8")
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 377, in download_as_byte_array
+    num_max_attempts=num_max_attempts,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 331, in download
+    return blob.download_as_bytes()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 1431, in download_as_bytes
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 1126, in download_blob_to_file
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 4470, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.NotFound: 404 GET https://storage.googleapis.com/download/storage/v1/b/airflow_test_sd2beatles/o/schema%2Ftransaction_01.json?alt=media: No such object: airflow_test_sd2beatles/schema/transaction_01.json: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)
+[2023-01-06T01:54:23.652+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction_01.create_table, execution_date=20230106T015416, start_date=20230106T015422, end_date=20230106T015423
+[2023-01-06T01:54:23.676+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 351 for task transaction_01.create_table (404 GET https://storage.googleapis.com/download/storage/v1/b/airflow_test_sd2beatles/o/schema%2Ftransaction_01.json?alt=media: No such object: airflow_test_sd2beatles/schema/transaction_01.json: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>); 115)
+[2023-01-06T01:54:23.716+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-06T01:54:23.791+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

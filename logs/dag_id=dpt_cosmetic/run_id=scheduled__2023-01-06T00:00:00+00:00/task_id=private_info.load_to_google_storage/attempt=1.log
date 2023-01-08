@@ -1,0 +1,90 @@
+[2023-01-07T01:57:55.395+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T01:57:55.580+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T01:57:55.601+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T01:57:55.611+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T01:57:55.640+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T01:57:55.751+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): private_info.load_to_google_storage> on 2023-01-06 00:00:00+00:00
+[2023-01-07T01:57:55.771+0000] {standard_task_runner.py:55} INFO - Started process 207 to run task
+[2023-01-07T01:57:55.825+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'private_info.load_to_google_storage', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '498', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpqjwdldyd']
+[2023-01-07T01:57:55.835+0000] {standard_task_runner.py:83} INFO - Job 498: Subtask private_info.load_to_google_storage
+[2023-01-07T01:57:55.933+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T01:57:56.325+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T01:57:56.863+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=private_info.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T01:57:56.870+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T01:57:56.874+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T01:57:56.950+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T01:57:57.972+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T01:57:58.127+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=private_info.load_to_google_storage, execution_date=20230106T000000, start_date=20230107T015755, end_date=20230107T015758
+[2023-01-07T01:57:58.215+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T01:57:58.561+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-07T05:19:31.705+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:19:32.264+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:19:32.272+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:19:32.276+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:19:32.277+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:19:32.754+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): private_info.load_to_google_storage> on 2023-01-06 00:00:00+00:00
+[2023-01-07T05:19:32.914+0000] {standard_task_runner.py:55} INFO - Started process 545 to run task
+[2023-01-07T05:19:32.999+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'private_info.load_to_google_storage', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '589', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpbvx4aijz']
+[2023-01-07T05:19:33.092+0000] {standard_task_runner.py:83} INFO - Job 589: Subtask private_info.load_to_google_storage
+[2023-01-07T05:19:33.787+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T05:19:35.287+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:19:36.366+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=private_info.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T05:19:36.385+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T05:19:36.391+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T05:19:36.570+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T05:19:37.630+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T05:19:37.955+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=private_info.load_to_google_storage, execution_date=20230106T000000, start_date=20230107T051931, end_date=20230107T051937
+[2023-01-07T05:19:38.461+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:19:38.809+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-07T05:33:04.437+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:33:04.554+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:33:04.565+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:33:04.567+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:33:04.569+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:33:05.008+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): private_info.load_to_google_storage> on 2023-01-06 00:00:00+00:00
+[2023-01-07T05:33:05.068+0000] {standard_task_runner.py:55} INFO - Started process 188 to run task
+[2023-01-07T05:33:05.097+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'private_info.load_to_google_storage', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '637', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpc7dv3mon']
+[2023-01-07T05:33:05.133+0000] {standard_task_runner.py:83} INFO - Job 637: Subtask private_info.load_to_google_storage
+[2023-01-07T05:33:05.247+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T05:33:06.055+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:33:06.898+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=private_info.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T05:33:06.905+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T05:33:06.913+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T05:33:06.988+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T05:33:08.013+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T05:33:08.414+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=private_info.load_to_google_storage, execution_date=20230106T000000, start_date=20230107T053304, end_date=20230107T053308
+[2023-01-07T05:33:08.651+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:33:08.906+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

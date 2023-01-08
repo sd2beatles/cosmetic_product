@@ -1,0 +1,23 @@
+[2023-01-02T17:15:45.017+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.transform manual__2023-01-02T17:15:28.621166+00:00 [queued]>
+[2023-01-02T17:15:45.086+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.transform manual__2023-01-02T17:15:28.621166+00:00 [queued]>
+[2023-01-02T17:15:45.088+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T17:15:45.089+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T17:15:45.091+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T17:15:45.211+0000] {taskinstance.py:1383} INFO - Executing <Task(TransformOperator): user.transform> on 2023-01-02 17:15:28.621166+00:00
+[2023-01-02T17:15:45.237+0000] {standard_task_runner.py:55} INFO - Started process 518 to run task
+[2023-01-02T17:15:45.265+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.transform', 'manual__2023-01-02T17:15:28.621166+00:00', '--job-id', '267', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpimzpqici']
+[2023-01-02T17:15:45.274+0000] {standard_task_runner.py:83} INFO - Job 267: Subtask user.transform
+[2023-01-02T17:15:46.861+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.transform manual__2023-01-02T17:15:28.621166+00:00 [running]> on host 703acec1b71e
+[2023-01-02T17:15:48.015+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-02T17:15:28.621166+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-02T17:15:28.621166+00:00
+[2023-01-02T17:15:48.884+0000] {operator.py:104} INFO - successfully save the file,user
+[2023-01-02T17:15:49.015+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=user.transform, execution_date=20230102T171528, start_date=20230102T171545, end_date=20230102T171549
+[2023-01-02T17:15:49.310+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-02T17:15:51.274+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

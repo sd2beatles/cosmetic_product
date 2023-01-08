@@ -1,0 +1,67 @@
+[2023-01-06T00:00:06.167+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.create_dataset scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T00:00:06.212+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.create_dataset scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T00:00:06.214+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T00:00:06.216+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T00:00:06.218+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T00:00:06.297+0000] {taskinstance.py:1383} INFO - Executing <Task(GCSToBigQueryOperator): create_dataset> on 2023-01-05 00:00:00+00:00
+[2023-01-06T00:00:06.314+0000] {standard_task_runner.py:55} INFO - Started process 137 to run task
+[2023-01-06T00:00:06.331+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'create_dataset', 'scheduled__2023-01-05T00:00:00+00:00', '--job-id', '324', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpz9bg4fj1']
+[2023-01-06T00:00:06.341+0000] {standard_task_runner.py:83} INFO - Job 324: Subtask create_dataset
+[2023-01-06T00:00:06.402+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-06T00:00:06.646+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.create_dataset scheduled__2023-01-05T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T00:00:07.004+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=create_dataset
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-05T00:00:00+00:00
+[2023-01-06T00:00:07.010+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-06T00:00:07.051+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-06T00:00:07.056+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-06T00:00:07.079+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-06T00:00:07.789+0000] {bigquery.py:2842} INFO - Project not included in destination_project_dataset_table: cosmetic.transaction; using project "my-kubeflow-370515"
+[2023-01-06T00:00:07.792+0000] {bigquery.py:1554} INFO - Inserting job ***_1672963207791152_647f5439a545c01af290f107921986eb
+[2023-01-06T00:00:08.598+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 316, in execute
+    description=self.description,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1816, in run_load
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 439, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1560, in insert_job
+    job.result(timeout=timeout, retry=retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 137, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Provided Schema does not match Table my-kubeflow-370515:cosmetic.transaction. Field access_day has changed type from TIMESTAMP to STRING
+[2023-01-06T00:00:08.645+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=create_dataset, execution_date=20230105T000000, start_date=20230106T000006, end_date=20230106T000008
+[2023-01-06T00:00:08.729+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 324 for task create_dataset (400 Provided Schema does not match Table my-kubeflow-370515:cosmetic.transaction. Field access_day has changed type from TIMESTAMP to STRING; 137)
+[2023-01-06T00:00:08.799+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-06T00:00:08.912+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

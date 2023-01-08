@@ -1,0 +1,60 @@
+[2023-01-05T18:04:24.021+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.create_dataset manual__2023-01-05T18:04:22.011539+00:00 [queued]>
+[2023-01-05T18:04:24.042+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.create_dataset manual__2023-01-05T18:04:22.011539+00:00 [queued]>
+[2023-01-05T18:04:24.043+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T18:04:24.043+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-05T18:04:24.044+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-05T18:04:24.078+0000] {taskinstance.py:1383} INFO - Executing <Task(GCSToBigQueryOperator): create_dataset> on 2023-01-05 18:04:22.011539+00:00
+[2023-01-05T18:04:24.087+0000] {standard_task_runner.py:55} INFO - Started process 68 to run task
+[2023-01-05T18:04:24.094+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'create_dataset', 'manual__2023-01-05T18:04:22.011539+00:00', '--job-id', '290', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmptr8thpeo']
+[2023-01-05T18:04:24.098+0000] {standard_task_runner.py:83} INFO - Job 290: Subtask create_dataset
+[2023-01-05T18:04:24.229+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.create_dataset manual__2023-01-05T18:04:22.011539+00:00 [running]> on host 7dccb0a5668b
+[2023-01-05T18:04:24.325+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=create_dataset
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T18:04:22.011539+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-05T18:04:22.011539+00:00
+[2023-01-05T18:04:24.326+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-05T18:04:24.339+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-05T18:04:24.350+0000] {bigquery.py:2842} INFO - Project not included in destination_project_dataset_table: None.user; using project "my-kubeflow-370515"
+[2023-01-05T18:04:24.351+0000] {bigquery.py:1554} INFO - Inserting job ***_1672941864351065_3735f96f1270065c28a20d16f8134589
+[2023-01-05T18:04:25.364+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 316, in execute
+    description=self.description,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1816, in run_load
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 439, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1560, in insert_job
+    job.result(timeout=timeout, retry=retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 725, in result
+    self._begin(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 518, in _begin
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 782, in _call_api
+    return call()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 288, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.NotFound: 404 POST https://bigquery.googleapis.com/bigquery/v2/projects/my-kubeflow-370515/jobs?prettyPrint=false: Not found: Dataset my-kubeflow-370515:None
+[2023-01-05T18:04:25.386+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=create_dataset, execution_date=20230105T180422, start_date=20230105T180424, end_date=20230105T180425
+[2023-01-05T18:04:25.417+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 290 for task create_dataset (404 POST https://bigquery.googleapis.com/bigquery/v2/projects/my-kubeflow-370515/jobs?prettyPrint=false: Not found: Dataset my-kubeflow-370515:None; 68)
+[2023-01-05T18:04:25.434+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-05T18:04:25.493+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

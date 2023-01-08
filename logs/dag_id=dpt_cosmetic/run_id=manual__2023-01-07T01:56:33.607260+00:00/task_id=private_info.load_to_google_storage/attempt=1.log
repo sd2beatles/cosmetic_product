@@ -1,0 +1,27 @@
+[2023-01-07T01:57:45.343+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage manual__2023-01-07T01:56:33.607260+00:00 [queued]>
+[2023-01-07T01:57:45.703+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage manual__2023-01-07T01:56:33.607260+00:00 [queued]>
+[2023-01-07T01:57:45.706+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T01:57:45.720+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T01:57:45.736+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T01:57:46.096+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): private_info.load_to_google_storage> on 2023-01-07 01:56:33.607260+00:00
+[2023-01-07T01:57:46.152+0000] {standard_task_runner.py:55} INFO - Started process 193 to run task
+[2023-01-07T01:57:46.206+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'private_info.load_to_google_storage', 'manual__2023-01-07T01:56:33.607260+00:00', '--job-id', '493', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpm95xh3yx']
+[2023-01-07T01:57:46.224+0000] {standard_task_runner.py:83} INFO - Job 493: Subtask private_info.load_to_google_storage
+[2023-01-07T01:57:47.045+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.private_info.load_to_google_storage manual__2023-01-07T01:56:33.607260+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T01:57:48.139+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=private_info.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-07T01:56:33.607260+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-07T01:56:33.607260+00:00
+[2023-01-07T01:57:48.146+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T01:57:48.162+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T01:57:48.318+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T01:57:49.341+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T01:57:49.526+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=private_info.load_to_google_storage, execution_date=20230107T015633, start_date=20230107T015745, end_date=20230107T015749
+[2023-01-07T01:57:49.684+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T01:57:50.003+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

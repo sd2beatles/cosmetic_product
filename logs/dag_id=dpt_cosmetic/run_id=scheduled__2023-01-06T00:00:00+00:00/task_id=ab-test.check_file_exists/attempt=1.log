@@ -1,0 +1,90 @@
+[2023-01-07T01:57:34.594+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T01:57:34.738+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T01:57:34.750+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T01:57:34.751+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T01:57:34.753+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T01:57:34.978+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): ab-test.check_file_exists> on 2023-01-06 00:00:00+00:00
+[2023-01-07T01:57:35.010+0000] {standard_task_runner.py:55} INFO - Started process 167 to run task
+[2023-01-07T01:57:35.109+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'ab-test.check_file_exists', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '485', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpz7cr_gw_']
+[2023-01-07T01:57:35.134+0000] {standard_task_runner.py:83} INFO - Job 485: Subtask ab-test.check_file_exists
+[2023-01-07T01:57:35.274+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T01:57:35.847+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T01:57:37.153+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=ab-test.check_file_exists
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T01:57:37.170+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T01:57:37.173+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T01:57:37.325+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T01:57:38.390+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T01:57:38.615+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=ab-test.check_file_exists, execution_date=20230106T000000, start_date=20230107T015734, end_date=20230107T015738
+[2023-01-07T01:57:38.762+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T01:57:39.601+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-01-07T05:18:59.627+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:19:00.124+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:19:00.128+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:19:00.136+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:19:00.139+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:19:01.291+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): ab-test.check_file_exists> on 2023-01-06 00:00:00+00:00
+[2023-01-07T05:19:01.525+0000] {standard_task_runner.py:55} INFO - Started process 499 to run task
+[2023-01-07T05:19:01.714+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'ab-test.check_file_exists', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '582', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp1sujhmyr']
+[2023-01-07T05:19:01.890+0000] {standard_task_runner.py:83} INFO - Job 582: Subtask ab-test.check_file_exists
+[2023-01-07T05:19:02.463+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T05:19:03.882+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:19:06.671+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=ab-test.check_file_exists
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T05:19:06.734+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T05:19:06.773+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T05:19:07.310+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T05:19:08.349+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T05:19:09.544+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=ab-test.check_file_exists, execution_date=20230106T000000, start_date=20230107T051859, end_date=20230107T051909
+[2023-01-07T05:19:10.445+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:19:11.638+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-07T05:32:36.006+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:32:36.149+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:32:36.151+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:32:36.169+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:32:36.171+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:32:36.410+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): ab-test.check_file_exists> on 2023-01-06 00:00:00+00:00
+[2023-01-07T05:32:36.571+0000] {standard_task_runner.py:55} INFO - Started process 139 to run task
+[2023-01-07T05:32:36.692+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'ab-test.check_file_exists', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '623', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp5h7hst68']
+[2023-01-07T05:32:36.730+0000] {standard_task_runner.py:83} INFO - Job 623: Subtask ab-test.check_file_exists
+[2023-01-07T05:32:36.833+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T05:32:37.420+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.ab-test.check_file_exists scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:32:38.947+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=ab-test.check_file_exists
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T05:32:38.954+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-07T05:32:38.971+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'sleep 1']
+[2023-01-07T05:32:39.102+0000] {subprocess.py:86} INFO - Output:
+[2023-01-07T05:32:40.124+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-01-07T05:32:40.623+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=ab-test.check_file_exists, execution_date=20230106T000000, start_date=20230107T053236, end_date=20230107T053240
+[2023-01-07T05:32:40.917+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:32:41.750+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

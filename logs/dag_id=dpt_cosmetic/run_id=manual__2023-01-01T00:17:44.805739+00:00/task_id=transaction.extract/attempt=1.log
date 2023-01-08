@@ -1,0 +1,23 @@
+[2023-01-01T00:17:57.074+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.extract manual__2023-01-01T00:17:44.805739+00:00 [queued]>
+[2023-01-01T00:17:57.120+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction.extract manual__2023-01-01T00:17:44.805739+00:00 [queued]>
+[2023-01-01T00:17:57.122+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T00:17:57.123+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-01T00:17:57.124+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-01T00:17:57.200+0000] {taskinstance.py:1383} INFO - Executing <Task(ExtractOperator): transaction.extract> on 2023-01-01 00:17:44.805739+00:00
+[2023-01-01T00:17:57.218+0000] {standard_task_runner.py:55} INFO - Started process 574 to run task
+[2023-01-01T00:17:57.235+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction.extract', 'manual__2023-01-01T00:17:44.805739+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpa_s93m3o']
+[2023-01-01T00:17:57.238+0000] {standard_task_runner.py:83} INFO - Job 94: Subtask transaction.extract
+[2023-01-01T00:17:57.637+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction.extract manual__2023-01-01T00:17:44.805739+00:00 [running]> on host 6bd76effbc07
+[2023-01-01T00:17:57.989+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction.extract
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:17:44.805739+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-01T00:17:44.805739+00:00
+[2023-01-01T00:17:58.201+0000] {logging_mixin.py:120} INFO - []
+[2023-01-01T00:17:58.258+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=transaction.extract, execution_date=20230101T001744, start_date=20230101T001757, end_date=20230101T001758
+[2023-01-01T00:17:58.379+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-01T00:17:58.495+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

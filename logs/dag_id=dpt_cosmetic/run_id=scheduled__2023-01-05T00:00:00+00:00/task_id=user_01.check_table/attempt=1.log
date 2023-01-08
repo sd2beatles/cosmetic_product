@@ -1,0 +1,88 @@
+[2023-01-06T01:17:35.186+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T01:17:35.222+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T01:17:35.222+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:17:35.223+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T01:17:35.223+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:17:35.264+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): user_01.check_table> on 2023-01-05 00:00:00+00:00
+[2023-01-06T01:17:35.275+0000] {standard_task_runner.py:55} INFO - Started process 57 to run task
+[2023-01-06T01:17:35.286+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user_01.check_table', 'scheduled__2023-01-05T00:00:00+00:00', '--job-id', '332', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp0tnk4k5n']
+[2023-01-06T01:17:35.290+0000] {standard_task_runner.py:83} INFO - Job 332: Subtask user_01.check_table
+[2023-01-06T01:17:35.331+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-06T01:17:35.452+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T01:17:35.584+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user_01.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-05T00:00:00+00:00
+[2023-01-06T01:17:36.202+0000] {python.py:177} INFO - Done. Returned value was: insert_data
+[2023-01-06T01:17:36.228+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 225, in execute
+    f"Branch callable must return valid task_ids. Invalid tasks found: {invalid_task_ids}"
+airflow.exceptions.AirflowException: Branch callable must return valid task_ids. Invalid tasks found: {'insert_data'}
+[2023-01-06T01:17:36.236+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=user_01.check_table, execution_date=20230105T000000, start_date=20230106T011735, end_date=20230106T011736
+[2023-01-06T01:17:36.262+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 332 for task user_01.check_table (Branch callable must return valid task_ids. Invalid tasks found: {'insert_data'}; 57)
+[2023-01-06T01:17:36.303+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-06T01:17:36.386+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-06T01:57:41.040+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T01:57:41.053+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T01:57:41.054+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:57:41.055+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T01:57:41.055+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:57:41.077+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): user_01.check_table> on 2023-01-05 00:00:00+00:00
+[2023-01-06T01:57:41.083+0000] {standard_task_runner.py:55} INFO - Started process 128 to run task
+[2023-01-06T01:57:41.088+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user_01.check_table', 'scheduled__2023-01-05T00:00:00+00:00', '--job-id', '354', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp6uv7762c']
+[2023-01-06T01:57:41.092+0000] {standard_task_runner.py:83} INFO - Job 354: Subtask user_01.check_table
+[2023-01-06T01:57:41.118+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-06T01:57:41.202+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T01:57:41.306+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user_01.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-05T00:00:00+00:00
+[2023-01-06T01:57:41.851+0000] {python.py:177} INFO - Done. Returned value was: user_01.insert_data
+[2023-01-06T01:57:41.853+0000] {skipmixin.py:155} INFO - Following branch user_01.insert_data
+[2023-01-06T01:57:41.856+0000] {skipmixin.py:190} INFO - Skipping tasks ['user_01.create_table']
+[2023-01-06T01:57:41.976+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=user_01.check_table, execution_date=20230105T000000, start_date=20230106T015741, end_date=20230106T015741
+[2023-01-06T01:57:42.025+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-06T01:57:42.108+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-06T01:59:10.871+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T01:59:10.882+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [queued]>
+[2023-01-06T01:59:10.883+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:59:10.883+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T01:59:10.884+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:59:10.901+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): user_01.check_table> on 2023-01-05 00:00:00+00:00
+[2023-01-06T01:59:10.907+0000] {standard_task_runner.py:55} INFO - Started process 157 to run task
+[2023-01-06T01:59:10.911+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user_01.check_table', 'scheduled__2023-01-05T00:00:00+00:00', '--job-id', '365', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpxdlqy66n']
+[2023-01-06T01:59:10.914+0000] {standard_task_runner.py:83} INFO - Job 365: Subtask user_01.check_table
+[2023-01-06T01:59:10.929+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-06T01:59:11.000+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user_01.check_table scheduled__2023-01-05T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T01:59:11.093+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user_01.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-05T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-05T00:00:00+00:00
+[2023-01-06T01:59:11.709+0000] {python.py:177} INFO - Done. Returned value was: user_01.insert_data
+[2023-01-06T01:59:11.712+0000] {skipmixin.py:155} INFO - Following branch user_01.insert_data
+[2023-01-06T01:59:11.714+0000] {skipmixin.py:190} INFO - Skipping tasks ['user_01.create_table']
+[2023-01-06T01:59:11.785+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=user_01.check_table, execution_date=20230105T000000, start_date=20230106T015910, end_date=20230106T015911
+[2023-01-06T01:59:11.809+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-06T01:59:11.860+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

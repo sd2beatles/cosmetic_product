@@ -1,0 +1,11 @@
+passlib
+google-cloud-storage
+python-decouple
+apache-airflow[gcp]==2.4.2
+apache-airflow-providers-google==6.7.0
+pymongo
+apache-airflow-providers-mongo
+
+
+
+

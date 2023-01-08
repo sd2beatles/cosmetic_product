@@ -1,0 +1,29 @@
+[2023-01-06T01:30:08.641+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction_01.check_table manual__2023-01-06T01:30:05.450567+00:00 [queued]>
+[2023-01-06T01:30:08.655+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction_01.check_table manual__2023-01-06T01:30:05.450567+00:00 [queued]>
+[2023-01-06T01:30:08.655+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:30:08.656+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T01:30:08.656+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:30:08.681+0000] {taskinstance.py:1383} INFO - Executing <Task(BranchPythonOperator): transaction_01.check_table> on 2023-01-06 01:30:05.450567+00:00
+[2023-01-06T01:30:08.697+0000] {standard_task_runner.py:55} INFO - Started process 81 to run task
+[2023-01-06T01:30:08.714+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction_01.check_table', 'manual__2023-01-06T01:30:05.450567+00:00', '--job-id', '339', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpeatakoly']
+[2023-01-06T01:30:08.724+0000] {standard_task_runner.py:83} INFO - Job 339: Subtask transaction_01.check_table
+[2023-01-06T01:30:08.912+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction_01.check_table manual__2023-01-06T01:30:05.450567+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T01:30:09.006+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction_01.check_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T01:30:05.450567+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-06T01:30:05.450567+00:00
+[2023-01-06T01:30:09.723+0000] {python.py:177} INFO - Done. Returned value was: transaction_01.create_table
+[2023-01-06T01:30:09.761+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 225, in execute
+    f"Branch callable must return valid task_ids. Invalid tasks found: {invalid_task_ids}"
+airflow.exceptions.AirflowException: Branch callable must return valid task_ids. Invalid tasks found: {'transaction_01.create_table'}
+[2023-01-06T01:30:09.766+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction_01.check_table, execution_date=20230106T013005, start_date=20230106T013008, end_date=20230106T013009
+[2023-01-06T01:30:09.787+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 339 for task transaction_01.check_table (Branch callable must return valid task_ids. Invalid tasks found: {'transaction_01.create_table'}; 81)
+[2023-01-06T01:30:09.810+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-06T01:30:09.869+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

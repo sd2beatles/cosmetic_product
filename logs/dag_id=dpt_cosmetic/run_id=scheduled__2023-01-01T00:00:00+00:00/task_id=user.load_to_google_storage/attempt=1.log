@@ -1,0 +1,141 @@
+[2023-01-02T16:32:26.401+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:32:26.506+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:32:26.508+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:32:26.514+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:32:26.522+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:32:26.659+0000] {taskinstance.py:1383} INFO - Executing <Task(LocalToStorageOperator): user.load_to_google_storage> on 2023-01-01 00:00:00+00:00
+[2023-01-02T16:32:26.719+0000] {standard_task_runner.py:55} INFO - Started process 210 to run task
+[2023-01-02T16:32:26.765+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.load_to_google_storage', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '222', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpy7699nux']
+[2023-01-02T16:32:26.804+0000] {standard_task_runner.py:83} INFO - Job 222: Subtask user.load_to_google_storage
+[2023-01-02T16:32:26.973+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T16:32:28.684+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:32:29.530+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T16:32:29.538+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-02T16:32:29.645+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-02T16:32:29.827+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/operator.py", line 27, in execute
+    gcs.upload(self.bucket,self.dest_path,self.local_path)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 489, in upload
+    bucket = client.bucket(bucket_name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 279, in bucket
+    return Bucket(client=self, name=bucket_name, user_project=user_project)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/bucket.py", line 611, in __init__
+    name = _validate_name(name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/_helpers.py", line 81, in _validate_name
+    raise ValueError("Bucket names must start and end with a number or letter.")
+ValueError: Bucket names must start and end with a number or letter.
+[2023-01-02T16:32:29.949+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=user.load_to_google_storage, execution_date=20230101T000000, start_date=20230102T163226, end_date=20230102T163229
+[2023-01-02T16:32:30.040+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 222 for task user.load_to_google_storage (Bucket names must start and end with a number or letter.; 210)
+[2023-01-02T16:32:30.111+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-02T16:32:30.350+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-02T16:37:56.065+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:37:56.112+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:37:56.113+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:37:56.115+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:37:56.117+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:37:56.190+0000] {taskinstance.py:1383} INFO - Executing <Task(LocalToStorageOperator): user.load_to_google_storage> on 2023-01-01 00:00:00+00:00
+[2023-01-02T16:37:56.206+0000] {standard_task_runner.py:55} INFO - Started process 310 to run task
+[2023-01-02T16:37:56.223+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.load_to_google_storage', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '238', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp18vm3k49']
+[2023-01-02T16:37:56.225+0000] {standard_task_runner.py:83} INFO - Job 238: Subtask user.load_to_google_storage
+[2023-01-02T16:37:56.279+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T16:37:57.140+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:37:57.542+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T16:37:57.546+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-02T16:37:57.584+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-02T16:37:57.617+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/utilties/operator.py", line 27, in execute
+    gcs.upload(self.bucket,self.dest_path,self.local_path)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 489, in upload
+    bucket = client.bucket(bucket_name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/client.py", line 279, in bucket
+    return Bucket(client=self, name=bucket_name, user_project=user_project)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/bucket.py", line 611, in __init__
+    name = _validate_name(name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/_helpers.py", line 81, in _validate_name
+    raise ValueError("Bucket names must start and end with a number or letter.")
+ValueError: Bucket names must start and end with a number or letter.
+[2023-01-02T16:37:57.666+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=user.load_to_google_storage, execution_date=20230101T000000, start_date=20230102T163756, end_date=20230102T163757
+[2023-01-02T16:37:57.717+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 238 for task user.load_to_google_storage (Bucket names must start and end with a number or letter.; 310)
+[2023-01-02T16:37:57.765+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-02T16:37:58.362+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-01-02T16:45:18.618+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:45:18.686+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-01-02T16:45:18.688+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:45:18.691+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-02T16:45:18.692+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-02T16:45:18.795+0000] {taskinstance.py:1383} INFO - Executing <Task(LocalToStorageOperator): user.load_to_google_storage> on 2023-01-01 00:00:00+00:00
+[2023-01-02T16:45:18.813+0000] {standard_task_runner.py:55} INFO - Started process 421 to run task
+[2023-01-02T16:45:18.841+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'user.load_to_google_storage', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '253', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpup3ash09']
+[2023-01-02T16:45:18.844+0000] {standard_task_runner.py:83} INFO - Job 253: Subtask user.load_to_google_storage
+[2023-01-02T16:45:18.923+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-02T16:45:19.959+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.user.load_to_google_storage scheduled__2023-01-01T00:00:00+00:00 [running]> on host 703acec1b71e
+[2023-01-02T16:45:21.054+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=user.load_to_google_storage
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-01T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-01T00:00:00+00:00
+[2023-01-02T16:45:21.065+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-02T16:45:21.141+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-02T16:45:21.886+0000] {gcs.py:518} INFO - File /opt/***/storage/user/2023-01-03.csv uploaded to storage/user/2023-01-03.csv in ***_test_sd2beatles bucket
+[2023-01-02T16:45:21.888+0000] {operator.py:28} INFO - successfully fetch the file,user
+[2023-01-02T16:45:21.937+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=user.load_to_google_storage, execution_date=20230101T000000, start_date=20230102T164518, end_date=20230102T164521
+[2023-01-02T16:45:22.044+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-02T16:45:22.722+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

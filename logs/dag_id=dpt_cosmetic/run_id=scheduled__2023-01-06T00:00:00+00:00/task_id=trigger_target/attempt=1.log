@@ -1,0 +1,25 @@
+[2023-01-07T05:33:41.620+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.trigger_target scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:33:41.686+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.trigger_target scheduled__2023-01-06T00:00:00+00:00 [queued]>
+[2023-01-07T05:33:41.688+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:33:41.690+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-07T05:33:41.692+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-07T05:33:41.770+0000] {taskinstance.py:1383} INFO - Executing <Task(TriggerDagRunOperator): trigger_target> on 2023-01-06 00:00:00+00:00
+[2023-01-07T05:33:41.791+0000] {standard_task_runner.py:55} INFO - Started process 232 to run task
+[2023-01-07T05:33:41.812+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'trigger_target', 'scheduled__2023-01-06T00:00:00+00:00', '--job-id', '652', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpvvrvpxzo']
+[2023-01-07T05:33:41.822+0000] {standard_task_runner.py:83} INFO - Job 652: Subtask trigger_target
+[2023-01-07T05:33:41.875+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/configuration.py:545: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  option = self._get_environment_variables(deprecated_key, deprecated_section, key, section)
+
+[2023-01-07T05:33:42.122+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.trigger_target scheduled__2023-01-06T00:00:00+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-07T05:33:42.551+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=trigger_target
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-06T00:00:00+00:00
+[2023-01-07T05:33:43.262+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=dpt_cosmetic, task_id=trigger_target, execution_date=20230106T000000, start_date=20230107T053341, end_date=20230107T053343
+[2023-01-07T05:33:43.391+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2023-01-07T05:33:43.581+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,64 @@
+[2023-01-06T01:57:44.359+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction_01.insert_data manual__2023-01-06T01:57:35.165428+00:00 [queued]>
+[2023-01-06T01:57:44.372+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: dpt_cosmetic.transaction_01.insert_data manual__2023-01-06T01:57:35.165428+00:00 [queued]>
+[2023-01-06T01:57:44.373+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:57:44.374+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2023-01-06T01:57:44.374+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-06T01:57:44.396+0000] {taskinstance.py:1383} INFO - Executing <Task(GCSToBigQueryOperator): transaction_01.insert_data> on 2023-01-06 01:57:35.165428+00:00
+[2023-01-06T01:57:44.402+0000] {standard_task_runner.py:55} INFO - Started process 135 to run task
+[2023-01-06T01:57:44.406+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'dpt_cosmetic', 'transaction_01.insert_data', 'manual__2023-01-06T01:57:35.165428+00:00', '--job-id', '357', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp4w85u9gh']
+[2023-01-06T01:57:44.409+0000] {standard_task_runner.py:83} INFO - Job 357: Subtask transaction_01.insert_data
+[2023-01-06T01:57:44.486+0000] {task_command.py:376} INFO - Running <TaskInstance: dpt_cosmetic.transaction_01.insert_data manual__2023-01-06T01:57:35.165428+00:00 [running]> on host fdf4acf1d8ed
+[2023-01-06T01:57:44.585+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dpt_cosmetic
+AIRFLOW_CTX_TASK_ID=transaction_01.insert_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-06T01:57:35.165428+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-06T01:57:35.165428+00:00
+[2023-01-06T01:57:44.587+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-06T01:57:44.601+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-06T01:57:44.603+0000] {connection.py:429} ERROR - Unable to retrieve connection from secrets backend (EnvironmentVariablesBackend). Checking subsequent secrets backend.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 422, in get_connection_from_secrets
+    conn = secrets_backend.get_connection(conn_id=conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 115, in get_connection
+    return self.deserialize_connection(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/secrets/base_secrets.py", line 67, in deserialize_connection
+    return Connection.from_json(conn_id=conn_id, value=value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 449, in from_json
+    return Connection(conn_id=conn_id, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'key_path'
+[2023-01-06T01:57:44.613+0000] {base.py:71} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-01-06T01:57:45.150+0000] {bigquery.py:2842} INFO - Project not included in destination_project_dataset_table: cosmetic.transaction_01; using project "my-kubeflow-370515"
+[2023-01-06T01:57:45.152+0000] {bigquery.py:1554} INFO - Inserting job ***_1672970265151977_9aae7b3d2c71baf7d563b602d200d011
+[2023-01-06T01:57:46.110+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 316, in execute
+    description=self.description,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1816, in run_load
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 439, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1560, in insert_job
+    job.result(timeout=timeout, retry=retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 137, in result
+    raise self._exception
+google.api_core.exceptions.NotFound: 404 Not found: URI gs://airflow_test_sd2beatles/storage/transaction_01/2023-01-03.csv
+[2023-01-06T01:57:46.124+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=dpt_cosmetic, task_id=transaction_01.insert_data, execution_date=20230106T015735, start_date=20230106T015744, end_date=20230106T015746
+[2023-01-06T01:57:46.141+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 357 for task transaction_01.insert_data (404 Not found: URI gs://airflow_test_sd2beatles/storage/transaction_01/2023-01-03.csv; 135)
+[2023-01-06T01:57:46.190+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2023-01-06T01:57:46.216+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

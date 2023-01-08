@@ -1,0 +1,5 @@
+user_id,email,gender,age,country,credit_card,membership,register_date,last_updated
+u2000,u1001@gmail.com,F,42,China,TRUE,FALSE,39:00.0,59:41.7
+u2002,u1002@gmail.com,F,42,China,TRUE,FALSE,26:00.0,59:41.7
+u2003,u1003@gmail.com,F,43,U.S.A,FALSE,FALSE,57:00.0,59:41.8
+u2004,u1004@gmail.com,F,42,China,TRUE,FALSE,51:00.0,59:41.8
